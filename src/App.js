@@ -1,6 +1,7 @@
 import "./App.css";
-import Form from "./components/Form";
 import { useState } from "react";
+import Form from "./components/Form";
+import DevCard from "./components/DevCard";
 
 function App() {
   const [user, setUser] = useState({});
@@ -9,7 +10,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Form setUser={setUser} status={status} setStatus={setStatus} />
+        {!status ? (
+          <Form setUser={setUser} status={status} setStatus={setStatus} />
+        ) : (
+          <DevCard user={user} status={status} setStatus={setStatus} />
+        )}
       </header>
     </div>
   );
