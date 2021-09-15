@@ -1,0 +1,90 @@
+.container {
+  width: 400px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  margin: 10px;
+}
+
+form {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+label {
+  height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+input {
+  width: 320px;
+  padding: 6px;
+}
+
+select {
+  font-size: 16px;
+  width: 160px;
+  padding: 5px;
+}
+
+.container-password {
+  width: 335px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.container-info {
+  width: 335px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.password {
+  width: 144px;
+}
+
+button {
+  width: 335px;
+  padding: 6px;
+  margin: 15px auto;
+}
+
+span {
+  width: 160px;
+  font-size: 12px;
+  margin: 2px 0px;
+  text-align: justify;
+}
+
+.checkbox {
+  width: 335px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.check {
+  width: 15px;
+}
+
+.terms {
+  height: 10px;
+  text-align: center;
+}
+
+.icone {
+  margin-top: 8px;
+}
