@@ -17,11 +17,11 @@ const Form = ({ setUser }) => {
 
   const formSchema = yup.object().shape({
     nome: yup
-      .string("")
+      .string()
       .required("Nome obrigatório")
       .max(18, "Limite até 18 caracteres"),
     celular: yup
-      .string("")
+      .string()
       .required("Número obrigatório")
       .matches(
         "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$",
@@ -30,7 +30,7 @@ const Form = ({ setUser }) => {
     areaAtuacao: yup.string().required("Selecione uma opção"),
     nivelExperiencia: yup.string().required("Selecione uma opção"),
     email: yup
-      .string("")
+      .string()
       .required("Email obrigatório")
       .email("Informe um Email válido"),
     password: yup
@@ -66,25 +66,29 @@ const Form = ({ setUser }) => {
       <h3 className="title-one">Cadastro de DEVS</h3>
 
       <form className="container-form" onSubmit={handleSubmit(addNewUser)}>
-        <label>
-          Nome
-          <input placeholder="Nome e Sobrenome" {...register("nome")}></input>
-          <span>{errors.nome?.message}</span>
-        </label>
+        <div className="box-name">
+          <label>
+            Nome
+            <input placeholder="Nome e Sobrenome" {...register("nome")}></input>
+            <span>{errors.nome?.message}</span>
+          </label>
+        </div>
 
-        <label>
-          Celular de Contato
-          <InputMask
-            type="tel"
-            placeholder="(xx) xxxxx-xxxx"
-            mask="(99) 99999-9999"
-            maskChar="_"
-            {...register("celular")}
-          ></InputMask>
-          <span>{errors.celular?.message}</span>
-        </label>
+        <div className="box-cellphone">
+          <label>
+            Celular de Contato
+            <InputMask
+              type="tel"
+              placeholder="(xx) xxxxx-xxxx"
+              mask="(99) 99999-9999"
+              maskChar="_"
+              {...register("celular")}
+            ></InputMask>
+            <span>{errors.celular?.message}</span>
+          </label>
+        </div>
 
-        <div className="container-info">
+        <div className="box-info">
           <label>
             Área de Atuação
             <select {...register("areaAtuacao")}>
@@ -108,13 +112,18 @@ const Form = ({ setUser }) => {
           </label>
         </div>
 
-        <label>
-          Email
-          <input placeholder="Endereço de Email" {...register("email")}></input>
-          <span>{errors.email?.message}</span>
-        </label>
+        <div className="box-email">
+          <label>
+            Email
+            <input
+              placeholder="Endereço de Email"
+              {...register("email")}
+            ></input>
+            <span>{errors.email?.message}</span>
+          </label>
+        </div>
 
-        <div className="container-password">
+        <div className="box-password">
           <label>
             <input
               className="password"
@@ -125,17 +134,19 @@ const Form = ({ setUser }) => {
             <span>{errors.password?.message}</span>
           </label>
 
-          {isShowPassword ? (
-            <AiFillEye
-              className="icone"
-              onClick={() => setIsShowPassword(!isShowPassword)}
-            />
-          ) : (
-            <AiFillEyeInvisible
-              className="icone"
-              onClick={() => setIsShowPassword(!isShowPassword)}
-            />
-          )}
+          <div>
+            {isShowPassword ? (
+              <AiFillEye
+                className="icone"
+                onClick={() => setIsShowPassword(!isShowPassword)}
+              />
+            ) : (
+              <AiFillEyeInvisible
+                className="icone"
+                onClick={() => setIsShowPassword(!isShowPassword)}
+              />
+            )}
+          </div>
 
           <label>
             <input
@@ -144,20 +155,21 @@ const Form = ({ setUser }) => {
               placeholder="Confirme sua Senha"
               {...register("confirmPassword")}
             ></input>
-
             <span>{errors.confirmPassword?.message}</span>
           </label>
         </div>
 
-        <label className="input-checkbox">
-          <input
-            type="checkbox"
-            className="btn-check"
-            {...register("termoDeUso")}
-          ></input>
-          Eu aceito os termos de uso da aplicação
-        </label>
-        <span className="text-err-terms">{errors.termoDeUso?.message}</span>
+        <div className="box-checkbox">
+          <label className="checkbox">
+            <input
+              type="checkbox"
+              className="btn-check"
+              {...register("termoDeUso")}
+            ></input>
+            Eu aceito os termos de uso da aplicação
+          </label>
+          <span className="text-error-terms">{errors.termoDeUso?.message}</span>
+        </div>
 
         <button className="btn-cadastro" type="submit">
           Cadastrar

@@ -66,13 +66,13 @@ span {
   text-align: justify;
 }
 
-.container-info {
+.box-info {
   width: 294px;
   display: flex;
   justify-content: space-between;
 }
 
-.container-password {
+.box-password {
   width: 294px;
   height: 100px;
   display: flex;
@@ -92,7 +92,12 @@ span {
   top: 7px;
 }
 
-.input-checkbox {
+.box-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
   width: 290px;
   height: 20px;
   margin-top: 6px;
@@ -107,7 +112,7 @@ span {
   width: 16px;
 }
 
-.text-err-terms {
+.text-error-terms {
   height: 10px;
   margin-left: 6px;
 }
@@ -175,11 +180,11 @@ span {
     width: 160px;
   }
 
-  .container-info {
+  .box-info {
     width: 340px;
   }
 
-  .container-password {
+  .box-password {
     width: 340px;
   }
 
@@ -194,7 +199,7 @@ span {
     top: 4px;
   }
 
-  .input-checkbox {
+  .checkbox {
     width: 335px;
     font-size: 19px;
     margin: 0;
@@ -204,7 +209,7 @@ span {
     margin-top: 5px;
   }
 
-  .text-err-terms {
+  .text-error-terms {
     margin-left: 10px;
   }
 
