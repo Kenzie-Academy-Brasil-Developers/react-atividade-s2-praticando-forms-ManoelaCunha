@@ -1,11 +1,16 @@
 import "./styles.css";
 import img from "./avatar-outline.gif";
+import { useHistory } from "react-router";
 
 const DevCard = ({
   user: { nome, celular, areaAtuacao, nivelExperiencia, email },
-  status,
-  setStatus,
 }) => {
+  const history = useHistory();
+
+  const handleBackToForm = () => {
+    history.push("/");
+  };
+
   return (
     <>
       <div className="Dev-Card">
@@ -25,7 +30,7 @@ const DevCard = ({
         </p>
       </div>
 
-      <button className="btn-return" onClick={() => setStatus(!status)}>
+      <button className="btn-return" onClick={handleBackToForm}>
         Voltar
       </button>
     </>

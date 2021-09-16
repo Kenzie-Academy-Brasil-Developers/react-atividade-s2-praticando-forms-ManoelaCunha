@@ -5,13 +5,15 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useState } from "react";
-import InputMask from "react-input-mask";
+import { useHistory } from "react-router";
 
+import InputMask from "react-input-mask";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 
-const Form = ({ setUser, status, setStatus }) => {
+const Form = ({ setUser }) => {
   const [isShowPassword, setIsShowPassword] = useState(true);
+  const history = useHistory();
 
   const formSchema = yup.object().shape({
     nome: yup
@@ -52,12 +54,10 @@ const Form = ({ setUser, status, setStatus }) => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-
+  const addNewUser = (data) => {
     formSchema.isValid(data).then((valid) => {
       valid && setUser(data);
-      setStatus(!status);
+      history.push("/card");
     });
   };
 
@@ -65,7 +65,7 @@ const Form = ({ setUser, status, setStatus }) => {
     <div className="container">
       <h3 className="title-one">Cadastro de DEVS</h3>
 
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="container-form" onSubmit={handleSubmit(addNewUser)}>
         <label>
           Nome
           <input placeholder="Nome e Sobrenome" {...register("nome")}></input>

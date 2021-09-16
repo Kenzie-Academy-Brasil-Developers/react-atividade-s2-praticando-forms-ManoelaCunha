@@ -20,7 +20,7 @@
   font-family: "Glory", sans-serif;
 }
 
-.form {
+.container-form {
   width: 290px;
   display: flex;
   flex-direction: column;
@@ -155,7 +155,7 @@ span {
     width: 400px;
   }
 
-  .form {
+  .container-form {
     width: 340px;
   }
 
