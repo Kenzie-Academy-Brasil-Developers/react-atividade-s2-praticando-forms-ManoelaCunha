@@ -1,5 +1,5 @@
 import "./styles.css";
-import img from "./avatar-outline.gif";
+import img from "./assets/avatar-outline.gif";
 import { useHistory } from "react-router";
 
 const DevCard = ({
