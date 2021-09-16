@@ -63,7 +63,7 @@ const Form = ({ setUser, status, setStatus }) => {
 
   return (
     <div className="container">
-      <h3>Cadastro de DEVS</h3>
+      <h3 className="title-one">Cadastro de DEVS</h3>
 
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <label>
@@ -149,17 +149,19 @@ const Form = ({ setUser, status, setStatus }) => {
           </label>
         </div>
 
-        <label className="checkbox">
+        <label className="input-checkbox">
           <input
             type="checkbox"
-            className="check"
+            className="btn-check"
             {...register("termoDeUso")}
           ></input>
           Eu aceito os termos de uso da aplicação
         </label>
-        <span className="terms">{errors.termoDeUso?.message}</span>
+        <span className="text-err-terms">{errors.termoDeUso?.message}</span>
 
-        <button type="submit">Cadastrar</button>
+        <button className="btn-cadastro" type="submit">
+          Cadastrar
+        </button>
       </form>
     </div>
   );

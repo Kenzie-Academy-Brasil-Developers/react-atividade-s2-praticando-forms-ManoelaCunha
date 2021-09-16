@@ -10,11 +10,19 @@ const DevCard = ({
     <>
       <div className="Dev-Card">
         <img src={img} alt="Avatar" />
-        <h3>{nome}</h3>
-        <p>Contato: {celular}</p>
-        <p>Email: {email}</p>
-        <p>Área de Atuação: {areaAtuacao}</p>
-        <p>Nível de Experiência: {nivelExperiencia}</p>
+        <h3 className="title-two">{nome}</h3>
+        <p>
+          <strong>Contato:</strong> {celular}
+        </p>
+        <p>
+          <strong>Área de Atuação:</strong> {areaAtuacao}
+        </p>
+        <p>
+          <strong>Nível de Experiência:</strong> {nivelExperiencia}
+        </p>
+        <p>
+          <strong>Email:</strong> {email}
+        </p>
       </div>
 
       <button className="btn-return" onClick={() => setStatus(!status)}>

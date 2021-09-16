@@ -8,14 +8,12 @@ function App() {
   const [status, setStatus] = useState(false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {!status ? (
-          <Form setUser={setUser} status={status} setStatus={setStatus} />
-        ) : (
-          <DevCard user={user} status={status} setStatus={setStatus} />
-        )}
-      </header>
+    <div className="App-content">
+      {!status ? (
+        <Form setUser={setUser} status={status} setStatus={setStatus} />
+      ) : (
+        <DevCard user={user} status={status} setStatus={setStatus} />
+      )}
     </div>
   );
 }
